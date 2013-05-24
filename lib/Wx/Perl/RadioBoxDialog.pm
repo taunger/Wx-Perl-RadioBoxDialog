@@ -24,14 +24,18 @@ use parent -norequire => qw( Wx::Dialog );
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
+Dialog like a wxSingleChoiceDialog, just with a RadioBox.
 
     use Wx::Perl::RadioBoxDialog;
 
-    my $foo = Wx::Perl::RadioBoxDialog->new();
-    ...
+    my $dlg = Wx::Perl::RadioBoxDialog->new(
+    	undef,
+		"Testmessage",
+		'Testcaption',
+		[ qw( a b c d e ) ],
+    );
+    $dlg->ShowModal;
+	$dlg->Destroy;
 
 =head1 METHODS
 
@@ -149,17 +153,13 @@ sub ShowModal {
 	return $this->SUPER::ShowModal( @_ );
 }
 
-=head2 ShowDialog
+# TODO ..
 
-static Method
-
-=cut
-
-sub ShowDialog {
-	my $this = shift;
-	
-	
-}
+#sub ShowDialog {
+#	my $this = shift;
+#	
+#	
+#}
 
 =head2 SetMessage( $message )
 

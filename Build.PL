@@ -16,11 +16,16 @@ my $builder = Module::Build->new(
         'Test::More' => 0,
     },
     requires => {
-        #'ABC'              => 1.6,
-        #'Foo::Bar::Module' => 5.0401,
+        'Wx' => 0,
     },
     add_to_cleanup     => [ 'Wx-Perl-RadioBoxDialog-*' ],
     create_makefile_pl => 'traditional',
+    
+    meta_merge => {
+        resources => {
+            repository => 'https://github.com/taunger/Config-Source'
+        }
+    },
 );
 
 $builder->create_build_script();
