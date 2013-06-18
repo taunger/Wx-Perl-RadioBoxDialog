@@ -1,7 +1,6 @@
 package Wx::Perl::RadioBoxDialog;
 
 use 5.12.0;
-use strict;
 use warnings FATAL => 'all';
 
 =head1 NAME
