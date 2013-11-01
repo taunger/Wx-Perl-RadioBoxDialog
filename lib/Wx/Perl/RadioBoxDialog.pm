@@ -9,11 +9,11 @@ Wx::Perl::RadioBoxDialog - wxSingleChoiceDialog with RadioBox
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Wx qw( wxID_ANY wxDEFAULT_DIALOG_STYLE wxDefaultPosition wxDefaultSize wxVERTICAL 
 		   wxEXPAND wxBOTTOM wxALL wxOK wxCANCEL wxRESIZE_BORDER wxRA_SPECIFY_ROWS 
@@ -34,7 +34,7 @@ Dialog like a wxSingleChoiceDialog, just with a RadioBox.
 		[ qw( a b c d e ) ],
     );
     $dlg->ShowModal;
-	$dlg->Destroy;
+    $dlg->Destroy;
 
 =head1 METHODS
 
@@ -191,7 +191,7 @@ sub initialize {
 	my $sizerRand = Wx::BoxSizer->new( wxVERTICAL );
 	
 	$sizerRand->Add( $this->{message}, 0, wxEXPAND | wxBOTTOM, 5 );
-	$sizerRand->Add( $this->{radioBox}, 0, wxBOTTOM, 10 );
+	$sizerRand->Add( $this->{radioBox}, 0, wxBOTTOM | wxEXPAND, 10 );
 	$sizerRand->AddStretchSpacer( 1 );
 	$sizerRand->Add( $this->CreateSeparatedButtonSizer( wxOK | wxCANCEL ), 0, wxEXPAND );
 	
